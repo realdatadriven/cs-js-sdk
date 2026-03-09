@@ -12,7 +12,7 @@ export const CS = {
         this.lang = lang;
         return this;
     },
-    set_token: function (token = 'en') {
+    set_token: function (token = null) {
         this.token = token;
         return this;
     },
@@ -159,24 +159,8 @@ export const CS = {
         });
         return await res.json();
     },
-    parse_icals: async function (params) {
-        const api = `${this.host}/dyn_api/crud/parse_icals`;
-        return await this.api_call(api, { data: params });
-    },
-    mail_smtp: async function (params) {
-        const api = `${this.host}/dyn_api/mail/smtp`;
-        return await this.api_call(api, { data: params });
-    },
-    mail_outlook: async function (params) {
-        const api = `${this.host}/dyn_api/mail/outlook`;
-        return await this.api_call(api, { data: params });
-    },
-    invite_outlook: async function (params) {
-        const api = `${this.host}/dyn_api/mail/outlook_invite`;
-        return await this.api_call(api, { data: params });
-    },
-    etl: async function (action, params) {
-        const api = `${this.host}/dyn_api/etl/${action}`;
+    etlx: async function (action, params) {
+        const api = `${this.host}/dyn_api/etlx/${action}`;
         return await this.api_call(api, { data: params });
     },
     get_upload_api: function (payload) {
